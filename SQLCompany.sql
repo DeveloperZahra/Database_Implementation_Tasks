@@ -1,4 +1,4 @@
-create database company
+﻿create database company
 
 use company
 
@@ -26,10 +26,6 @@ CREATE TABLE Employee (
     FOREIGN KEY (Dnumber) REFERENCES Department(Dnumber)
 );
 
--- Add foreign key constraint for ManagerID (after Employee table exists)
-ALTER TABLE Department
-ADD CONSTRAINT FK_Manager
-FOREIGN KEY (ManagerID) REFERENCES Employee(EmployeeSsn);
 
 
 -- dept_Locations table 
@@ -71,5 +67,15 @@ CREATE TABLE Dependent (
     FOREIGN KEY (EmployeeSsn) REFERENCES Employee(EmployeeSsn)
 );
 
+-- Add foreign key constraint for ManagerID (after Employee table exists)
 
+ALTER TABLE ُEmployee
+ADD E_id int Not null,
+	Dnumber int not null;
+
+ALTER TABLE Employee
+ADD FOREIGN KEY(E_id) REFERENCES Employee(Ssn);
+
+Alter Table Employee 
+ADD FOREIGN KEY(Dnumber) REFERENCES Department(Dnumber);
 
