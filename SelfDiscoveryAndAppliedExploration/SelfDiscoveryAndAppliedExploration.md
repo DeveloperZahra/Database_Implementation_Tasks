@@ -52,10 +52,9 @@ Cancels all changes made in the transaction if something goes wrong
 -----------------------
 * ACID Properties Exploration:
 
-1. __**Atomicity**__  – All operations in the transaction are treated as a single unit. If one fails, all are rolled back.
-
-2. __**Consistency**__  – The database moves from one valid state to another.
-
-3. __**Isolation**__  – Transactions do not interfere with each other.
-
-4. __**Durability**__  – Once committed, changes are saved even if the system crashes.
+| Property    | Meaning                                           | Real-life Example                                       |
+| ----------- | ------------------------------------------------- | ------------------------------------------------------- |
+| Atomicity   | All-or-nothing execution                          | ATM cash withdrawal (both deduct + dispense or neither) |
+| Consistency | Maintain data validity and rules                  | Car must always have exactly one owner                  |
+| Isolation   | No interference between simultaneous transactions | Two users trying to book the last flight seat           |
+| Durability  | Committed changes stay even after a crash         | Online purchase remains saved even if system crashes    |
