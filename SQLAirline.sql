@@ -170,3 +170,37 @@ INSERT INTO Flights (flight_no, restrictions, weekdays, Airline) VALUES
 ('Etihad Airways', 28);   -- Wednesday to Friday (binary 0011100)
 
 SELECT * FROM Flight;      
+
+
+
+--insert data to Flight_Leg table 
+INSERT INTO Flight_Leg (leg_no, Airport_code, flight_no) VALUES
+(1, 1, 1),
+(2, 2, 2),
+(3, 3, 3),
+(4, 4, 4),
+(5, 5, 5);
+
+SELECT * FROM Flight_Leg;
+
+
+--insert data to Fare table 
+INSERT INTO Fare (amount, fare_relationship, flight_no) VALUES
+(450, 'Non-refundable, no date change', 1),
+(600, 'Refundable with fee, date change allowed', 2),
+(350, 'Non-refundable, baggage not included', 3),
+(800, 'Fully refundable, includes meals and baggage', 4),
+(500, 'Non-refundable, date change allowed with fee', 5);
+
+SELECT * FROM Fare;
+
+
+--insert data to Leg_Instance table 
+INSERT INTO Leg_instance (Leg_date, departure_time, arrival_time, no_of_arrival_seate, airport_code, airplane_id, leg_no) VALUES
+('2025-06-01', '08:00:00', '10:00:00', 150, 1, 1, 1),
+('2025-06-02', '12:30:00', '14:45:00', 140, 2, 2, 2),
+('2025-06-03', '09:15:00', '11:45:00', 175, 3, 3, 3),
+('2025-06-04', '16:00:00', '18:20:00', 190, 4, 4, 4),
+('2025-06-05', '06:45:00', '09:00:00', 120, 5, 5, 5);
+
+SELECT * FROM Leg_Instance;
